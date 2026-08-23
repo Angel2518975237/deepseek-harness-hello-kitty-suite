@@ -1,0 +1,212 @@
+/**
+ * Sweetheart Workspace Expressive
+ *
+ * L1 remaps official DeepSeek Harness design tokens. L2 rules only target
+ * semantic attributes owned by Skin Center, so layout and behavior stay with
+ * Harness while this directory remains a removable visual layer.
+ */
+
+:root,
+body:not([data-ds-dark-theme]) {
+  --sweet-accent: #ed4f88;
+  --sweet-accent-soft: #f59bbc;
+  --sweet-cocoa: #55444a;
+  --sweet-panel: #fffafc;
+  --sweet-panel-strong: #fffefe;
+  --sweet-border: #ed4f8842;
+  --sweet-decoration-opacity: 0.88;
+  --sweet-logo-cover: #fff7fa;
+
+  --dsw-alias-bg-base: #fff7fa;
+  --dsw-alias-bg-layer-1: #fffdfd;
+  --dsw-alias-bg-layer-2: #fdeef4;
+  --dsw-alias-bg-layer-3: #f9dfe9;
+  --dsw-alias-bg-overlay: #fffafcf2;
+  --dsw-alias-bg-skeleton: #ed4f8812;
+  --dsw-alias-border-l1: #6b314c12;
+  --dsw-alias-border-l2: #c96a9538;
+  --dsw-alias-border-l3: #c96a9552;
+  --dsw-alias-border-l4: #c96a956b;
+  --dsw-alias-label-primary: #4b3a42;
+  --dsw-alias-label-secondary: #716168;
+  --dsw-alias-label-tertiary: #8c7b83;
+  --dsw-alias-label-dimmed: #aa9aa1;
+  --dsw-alias-label-caption: #9a8790;
+  --dsw-alias-brand-primary: #ed4f88;
+  --dsw-alias-brand-text: #d63f78;
+  --dsw-alias-interactive-bg-hover: #ed4f8814;
+  --dsw-alias-interactive-bg-active: #ed4f882b;
+  --dsw-alias-interactive-bg-hover-solid: #fbe6ef;
+  --dsw-alias-state-error-primary: #c8334f;
+  --dsw-alias-state-warn-primary: #a96914;
+  --dsw-alias-state-success-primary: #257d5a;
+  --dsw-alias-state-business-primary: #d63f78;
+  --dsw-alias-state-business-tertiary: #f9dce8;
+  --dsw-alias-button-primary-fill: #ed4f88;
+  --dsw-alias-button-primary-hover: #f06799;
+  --dsw-alias-button-primary-dimmed: #f5aec7;
+  --dsw-alias-button-contrast-fill: #55444a;
+  --dsw-alias-button-elevated-fill: #fffafc;
+  --dsw-alias-button-floating-fill: #fbe8f0;
+  --dsw-alias-button-floating-hover: #f7dbe6;
+  --dsw-alias-markdown-code-block: #fff8fb;
+  --dsw-alias-markdown-code-block-banner: #f8e7ee;
+  --dsw-alias-markdown-inline-code: #f8e4ed;
+  --dsw-alias-markdown-citation: #d63f78;
+  --dsw-specific-bubble: #fffafc;
+  --dsw-specific-bubble-highlight: #fff0f5;
+  --dsw-specific-input-major: #fffefe;
+  --dsw-specific-menu: #fffafc;
+  --dsw-specific-selector: #fbe7ef;
+  --dsw-specific-sidebar-fill: #fff3f7;
+  --dsw-specific-sidebar-nav-item-hover: #ed4f8814;
+  --dsw-specific-sidebar-nav-item-active: #ed4f8826;
+  --dsw-specific-sidebar-nav-item-active-accent: #ed4f88;
+  --dsw-alias-tooltip-bg: #55444a;
+  --dsw-alias-tooltip-fg: #fff9fb;
+  --dsw-shadow-lv1: 0 1px 2px #8f4f6b14;
+  --dsw-shadow-lv2: 0 8px 24px #b75c8220;
+  --dsw-shadow-lv3: 0 20px 52px #8f4f6b2b;
+  --dsw-alias-scrollbar-bg-l2: #bd789738;
+  --dsw-alias-scrollbar-hover-l2: #b85f8857;
+  --dsw-linear-gradient-think: linear-gradient(135deg, #ed4f88, #f59bbc);
+  --dsw-linear-think-select: #ed4f88;
+  --dsw-alias-brand-primary-new-colorprimary-new-color: #ed4f88;
+}
+
+body[data-ds-dark-theme] {
+  --sweet-accent: #ff78aa;
+  --sweet-accent-soft: #f39abc;
+  --sweet-cocoa: #f5e8ee;
+  --sweet-panel: #21191e;
+  --sweet-panel-strong: #281e24;
+  --sweet-border: #ff78aa42;
+  --sweet-decoration-opacity: 0.72;
+  --sweet-logo-cover: #1a1317;
+
+  --dsw-alias-bg-base: #151014;
+  --dsw-alias-bg-layer-1: #1d161b;
+  --dsw-alias-bg-layer-2: #251b21;
+  --dsw-alias-bg-layer-3: #302229;
+  --dsw-alias-bg-overlay: #2a1e25f2;
+  --dsw-alias-bg-skeleton: #ff78aa12;
+  --dsw-alias-border-l1: #ff78aa1a;
+  --dsw-alias-border-l2: #ff78aa33;
+  --dsw-alias-border-l3: #ff78aa4d;
+  --dsw-alias-border-l4: #ff78aa66;
+  --dsw-alias-label-primary: #f5e8ee;
+  --dsw-alias-label-secondary: #d0bcc5;
+  --dsw-alias-label-tertiary: #aa949e;
+  --dsw-alias-label-dimmed: #856f79;
+  --dsw-alias-label-caption: #9b838e;
+  --dsw-alias-brand-primary: #ff78aa;
+  --dsw-alias-brand-text: #ff9fc2;
+  --dsw-alias-interactive-bg-hover: #ff78aa1a;
+  --dsw-alias-interactive-bg-active: #ff78aa38;
+  --dsw-alias-interactive-bg-hover-solid: #38262f;
+  --dsw-alias-state-error-primary: #f16b78;
+  --dsw-alias-state-warn-primary: #e2a241;
+  --dsw-alias-state-success-primary: #4fc093;
+  --dsw-alias-state-business-primary: #ff78aa;
+  --dsw-alias-state-business-tertiary: #462736;
+  --dsw-alias-button-primary-fill: #f45d95;
+  --dsw-alias-button-primary-hover: #ff78aa;
+  --dsw-alias-button-primary-dimmed: #7b4059;
+  --dsw-alias-button-contrast-fill: #f5e8ee;
+  --dsw-alias-button-elevated-fill: #2d2027;
+  --dsw-alias-button-floating-fill: #302129;
+  --dsw-alias-button-floating-hover: #3b2832;
+  --dsw-alias-markdown-code-block: #1b1418;
+  --dsw-alias-markdown-code-block-banner: #2b1f25;
+  --dsw-alias-markdown-inline-code: #32212a;
+  --dsw-alias-markdown-citation: #ff9fc2;
+  --dsw-specific-bubble: #21191e;
+  --dsw-specific-bubble-highlight: #2b1c24;
+  --dsw-specific-input-major: #1f171c;
+  --dsw-specific-menu: #2a1f25;
+  --dsw-specific-selector: #2a1e25;
+  --dsw-specific-sidebar-fill: #191216;
+  --dsw-specific-sidebar-nav-item-hover: #ff78aa1a;
+  --dsw-specific-sidebar-nav-item-active: #ff78aa30;
+  --dsw-specific-sidebar-nav-item-active-accent: #ff78aa;
+  --dsw-alias-tooltip-bg: #3b2a33;
+  --dsw-alias-tooltip-fg: #fff4f8;
+  --dsw-shadow-lv1: 0 1px 2px #00000070;
+  --dsw-shadow-lv2: 0 8px 24px #00000085;
+  --dsw-shadow-lv3: 0 20px 52px #000000a3;
+  --dsw-alias-scrollbar-bg-l2: #ff78aa33;
+  --dsw-alias-scrollbar-hover-l2: #ff78aa61;
+  --dsw-linear-gradient-think: linear-gradient(135deg, #ff78aa, #f39abc);
+  --dsw-linear-think-select: #ff78aa;
+  --dsw-alias-brand-primary-new-colorprimary-new-color: #ff78aa;
+}
+
+[data-dsh-surface="sidebar"] {
+  border-right: 1px solid var(--sweet-border);
+}
+
+[data-dsh-surface="conversation"] {
+  background-color: var(--dsw-alias-bg-base);
+}
+
+[data-dsh-surface="session-header"] {
+  border-bottom-color: var(--sweet-border);
+}
+
+[data-dsh-surface="composer"] {
+  border: 1px solid var(--sweet-border);
+  border-radius: 18px;
+  background: var(--sweet-panel-strong);
+  box-shadow: 0 0 0 1px var(--sweet-border), 0 0 22px rgba(237, 79, 136, 0.3),
+    var(--dsw-shadow-lv2) !important;
+}
+
+/* New-conversation / composer focus glow -> pink (was DeepSeek blue-purple) */
+[data-dsh-surface="composer"]:focus-within,
+[data-dsh-surface="composer"]:focus {
+  border-color: var(--sweet-accent);
+  box-shadow: 0 0 0 3px var(--sweet-border), 0 0 26px rgba(237, 79, 136, 0.42),
+    var(--dsw-shadow-lv2) !important;
+}
+
+[data-dsh-part="composer-input"]:focus,
+[data-dsh-part="composer-input"]:focus-visible {
+  outline: 2px solid var(--sweet-accent);
+  outline-offset: 2px;
+}
+
+[data-dsh-part="message-body"] {
+  color: var(--dsw-alias-label-primary);
+}
+
+[data-dsh-part="composer-chip"],
+[data-dsh-plugin="git-graph"] [data-dsh-part="chip"],
+[data-dsh-plugin="git-graph"] [data-dsh-part="ref"],
+[data-dsh-plugin="ssh"] [data-dsh-part="tab"] {
+  border-color: var(--sweet-border);
+}
+
+[data-dsh-plugin="task-board"] [data-dsh-part="column"],
+[data-dsh-plugin="task-board"] [data-dsh-part="card"],
+[data-dsh-plugin="web-ui-settings"] [data-dsh-part="plugin-item"],
+[data-dsh-plugin="community-plugins"] [data-dsh-part="marketplace-card"],
+[data-dsh-part="dialog"],
+[data-dsh-part="panel"] {
+  border-color: var(--sweet-border);
+  background: var(--sweet-panel);
+  box-shadow: var(--dsw-shadow-lv2);
+}
+
+[data-dsh-plugin="pet"] [data-dsh-part="bubble"] {
+  border: 1px solid var(--sweet-border);
+  background: var(--sweet-panel);
+  color: var(--dsw-alias-label-primary);
+  box-shadow: var(--dsw-shadow-lv2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-dsh-surface],
+  [data-dsh-part] {
+    transition: none;
+  }
+}

@@ -1,0 +1,10 @@
+# Dependencies / build artifacts
+node_modules/
+dist/
+*.log
+.DS_Store
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp

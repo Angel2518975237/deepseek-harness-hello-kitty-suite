@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.linxin666.org/dsh-skin/v2.json",
+  "skinManifestVersion": 2,
+  "id": "hello-kitty-expressive",
+  "name": "甜心工作台·强化版",
+  "nameEn": "Sweetheart Workspace Expressive",
+  "version": "1.0.0",
+  "author": "Angel",
+  "tagline": "奶油粉、蝴蝶结与角色装饰组成的高辨识度工作台",
+  "description": "为 DeepSeek Harness 对话与开发工作流设计的主题强化皮肤。保留原有布局与语义状态，通过粉白配色、低密度纹样、侧栏角色、输入框蝴蝶结和兔子杯装饰增强主题辨识度，并同时提供可读性优先的浅色与深色方案。",
+  "tags": [
+    "pink",
+    "cute",
+    "character",
+    "developer",
+    "light-dark"
+  ],
+  "accent": "#ed4f88",
+  "order": 120,
+  "license": "Personal Use",
+  "attribution": "Character reference assets supplied by the user; related marks remain the property of their respective owners.",
+  "contributes": {
+    "stylesheet": "skin.css",
+    "patches": "patches.css"
+  }
+}

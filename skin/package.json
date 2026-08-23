@@ -1,0 +1,12 @@
+{
+  "name": "deepseek-harness-hello-kitty-expressive-skin",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Installable DeepSeek Harness Skin Center v2 asset package",
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "install:local": "node scripts/install.mjs",
+    "uninstall:local": "node scripts/uninstall.mjs"
+  }
+}

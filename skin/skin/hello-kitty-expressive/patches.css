@@ -1,0 +1,145 @@
+/**
+ * High-sensitivity visual layer.
+ *
+ * The skin still anchors on Skin Center's semantic surfaces. Pseudo-elements
+ * add non-interactive art without changing Harness DOM or event handling.
+ */
+
+[data-dsh-surface="conversation"] {
+  background-image:
+    radial-gradient(circle at 10% 14%, #f7a4c066 0 3px, transparent 4px),
+    radial-gradient(circle at 79% 8%, #f6cb6a73 0 2px, transparent 3px),
+    linear-gradient(45deg, transparent 48%, #f2b3c318 49%, #f2b3c318 51%, transparent 52%),
+    linear-gradient(-45deg, transparent 48%, #f2b3c318 49%, #f2b3c318 51%, transparent 52%);
+  background-position: 0 0, 0 0, 0 0, 14px 14px;
+  background-size: auto, auto, 28px 28px, 28px 28px;
+}
+
+body[data-ds-dark-theme] [data-dsh-surface="conversation"] {
+  background-image:
+    radial-gradient(circle at 10% 14%, #ff78aa38 0 3px, transparent 4px),
+    radial-gradient(circle at 79% 8%, #f6cb6a42 0 2px, transparent 3px),
+    linear-gradient(45deg, transparent 48%, #ff78aa10 49%, #ff78aa10 51%, transparent 52%),
+    linear-gradient(-45deg, transparent 48%, #ff78aa10 49%, #ff78aa10 51%, transparent 52%);
+}
+
+[data-dsh-surface="sidebar"],
+[data-dsh-surface="session-header"],
+[data-dsh-surface="composer"] {
+  position: relative;
+}
+
+/* Conversation directory sits above the Kitty decoration and is translucent,
+   so the Kitty reads as a backing behind the rows and never covers them */
+[data-slot="sidebar.workspaces"] {
+  position: relative;
+  z-index: 6;
+  background: color-mix(in srgb, var(--dsw-specific-sidebar-fill) 55%, transparent);
+}
+
+[data-dsh-surface="sidebar"]::before {
+  content: "";
+  position: absolute;
+  top: 26px;
+  left: 14px;
+  z-index: 5;
+  width: 24px;
+  height: 24px;
+  border-radius: 8px;
+  background-color: var(--sweet-logo-cover);
+  background-image: url("./assets/kitty-head.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 22px auto;
+  box-shadow: 0 0 0 3px var(--sweet-logo-cover);
+  pointer-events: none;
+}
+
+/* List sidebar: visible sitting Kitty decoration at the far left, moves with the sidebar, does not block clicks */
+[data-dsh-surface="sidebar"]::after {
+  content: "";
+  position: absolute;
+  left: 132px;
+  bottom: 108px;
+  z-index: 5;
+  width: min(190px, 66%);
+  aspect-ratio: 1 / 1;
+  background: url("./assets/kitty-apple-backing.png") left bottom / contain no-repeat;
+  opacity: 0.8;
+  filter: drop-shadow(0 10px 16px #c45b8424);
+  pointer-events: none;
+}
+
+[data-dsh-surface="session-header"]::after {
+  content: "♥   ✦      ♥";
+  position: absolute;
+  top: 16px;
+  left: 38%;
+  color: var(--sweet-accent-soft);
+  font-size: 16px;
+  letter-spacing: 42px;
+  opacity: 0.58;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* Session header: Hellokitty wordmark to the right of the mode pill */
+[data-dsh-surface="session-header"]::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 330px;
+  z-index: 1;
+  width: 116px;
+  height: 30px;
+  background: url("./assets/kitty-wordmark.png") center / contain no-repeat;
+  opacity: var(--sweet-decoration-opacity);
+  pointer-events: none;
+}
+
+[data-dsh-surface="composer"]::before {
+  content: "";
+  position: absolute;
+  top: -22px;
+  right: 24px;
+  z-index: 4;
+  width: 72px;
+  height: 46px;
+  background:
+    radial-gradient(ellipse at 24% 50%, #f59bbc 0 35%, #b4507847 37% 42%, transparent 44%),
+    radial-gradient(ellipse at 76% 50%, #f59bbc 0 35%, #b4507847 37% 42%, transparent 44%),
+    radial-gradient(circle at 50% 50%, #f8b5ce 0 18%, #b4507870 20% 25%, transparent 27%);
+  filter: drop-shadow(0 6px 8px #b7587c2b);
+  transform: rotate(7deg);
+  pointer-events: none;
+}
+
+[data-dsh-surface="composer"]::after {
+  content: "";
+  position: absolute;
+  right: -105px;
+  bottom: -8px;
+  z-index: 2;
+  width: 100px;
+  height: 126px;
+  background-image: url("./assets/kitty-bunny-cup.png");
+  background-repeat: no-repeat;
+  background-position: 100% 48%;
+  background-size: 214% auto;
+  opacity: var(--sweet-decoration-opacity);
+  filter: drop-shadow(0 9px 14px #bf577c26);
+  pointer-events: none;
+}
+
+@media (max-width: 1180px) {
+  [data-dsh-surface="composer"]::after,
+  [data-dsh-surface="session-header"]::after {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-dsh-surface="composer"]::before {
+    transform: rotate(7deg);
+  }
+}
