@@ -1,0 +1,5 @@
+# hello-kitty suite bundle patch: inserts the dual-face plugin row.
+# The row `name` must match the host half's exported Cordis `name`.
+- insert:
+    - id: hello-kitty-notifier
+      name: 'hello-kitty-notifier'

@@ -56,9 +56,18 @@ node scripts/install.mjs      # 复制到 ~/.dsh/skins/ 并启用皮肤中心
 - 卸载：`node scripts/uninstall.mjs`（可恢复移动，不删源码、不停用皮肤中心）
 - 校验：`node scripts/validate.mjs`（用本机皮肤中心真实 v2 校验器）
 
-### 提醒插件
+### 提醒插件（编译型 DSH 插件，本仓库根即插件）
 
-`notifier/` 是 DSH **动态插件**（`host.js` + `client.js`）。在 Harness 的动态插件面板加载即可；`agent/turn-stopping` → host 自增 `seq` → 客户端轮询触发。
+本仓库**根**就是一个可直接安装的 DSH 插件包（`package.json` + `cordis.patch.yml` + `lib/`）。安装：
+
+```sh
+# 在 Harness 的插件页粘贴仓库地址，或命令行：
+dsh plugin --profile web add https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite.git
+```
+
+重新加载/重启 Harness 后，`hello-kitty-notifier` 注册并开始监听：
+- 宿主端：`agent/turn-stopping` 每轮自增 `seq`，暴露 `GET /api/hellokitty-notify`；
+- 客户端：每 700ms `fetch` 该接口，`seq` 增长后弹粉色卡片 + 声音；提问时显示「有个问题等你回答」。
 
 > 提问检测依赖皮肤中心语义锚点 `[data-dsh-surface="conversation"]` / `[data-dsh-part="message-body"]`，建议与皮肤一起使用。
 
@@ -68,15 +77,17 @@ node scripts/install.mjs      # 复制到 ~/.dsh/skins/ 并启用皮肤中心
 
 ```text
 .
-├── notifier/            # Hello Kitty Task-Done Notifier（动态插件源码）
-│   ├── host.js
-│   └── client.js
-├── skin/                # 甜心工作台·强化版（Skin Center v2 皮肤包，自包含）
+├── lib/                    # Hello Kitty Task-Done Notifier（编译型 DSH 插件宿主+客户端）
+│   ├── index.js            #   宿主端：agent/turn-stopping → seq + /api 端点
+│   └── client.js           #   客户端：轮询 + 粉色卡片/声音/提问提醒
+├── cordis.patch.yml        # 插件注册行（bundle patch）
+├── package.json            # 插件 manifest（dsh / exports / peerDeps）
+├── skin/                   # 甜心工作台·强化版（Skin Center v2 皮肤包，自包含）
 │   ├── README.md · package.json
 │   ├── install.command / uninstall.command
 │   ├── scripts/install.mjs / uninstall.mjs / validate.mjs
 │   └── skin/hello-kitty-expressive/...
-└── docs/screenshots/    # 效果截图
+└── docs/screenshots/       # 效果截图
 ```
 
 ---
