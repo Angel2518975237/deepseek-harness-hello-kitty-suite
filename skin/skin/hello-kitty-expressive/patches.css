@@ -59,7 +59,7 @@ body[data-ds-dark-theme] [data-dsh-surface="conversation"] {
 [data-dsh-surface="sidebar"]::after {
   content: "";
   position: absolute;
-  left: 132px;
+  left: 60px;
   bottom: 108px;
   z-index: 5;
   width: min(190px, 66%);
