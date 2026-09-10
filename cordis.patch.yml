@@ -2,4 +2,4 @@
 # The row `name` must match the host half's exported Cordis `name`.
 - insert:
     - id: hello-kitty-notifier
-      name: 'hello-kitty-notifier'
+      name: 'deepseek-harness-hello-kitty-suite'

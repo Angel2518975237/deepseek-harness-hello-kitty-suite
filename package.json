@@ -1,6 +1,6 @@
 {
   "name": "deepseek-harness-hello-kitty-suite",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "💗 一套给 DeepSeek Harness 的粉色 Hello Kitty 主题皮肤 + 任务完成/提问提醒插件（Sweetheart Workspace Expressive skin & Hello Kitty Task-Done Notifier）",
   "type": "module",
   "main": "lib/index.js",
